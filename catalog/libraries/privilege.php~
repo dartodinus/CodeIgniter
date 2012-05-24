@@ -1,0 +1,39 @@
+<?PHP  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+class CI_Privilege extends CI_Controller{
+	
+    public function __construct(){
+		
+		$this->obj =& get_instance();
+		
+		$this->obj->load->helper('url');
+		$this->obj->load->library('session');
+		$this->obj->config->item('base_url');
+
+	}
+	
+	public function loggedIn(){
+		return $this->obj->session->userdata('logged_in_'.$this->obj->uri->segment(1));
+	}
+	
+	public function check($page_id, $do = null){
+		$sql = "SELECT * FROM t_user a, t_role b 
+				WHERE a.user_id = b.user_id AND 
+				modul_id = '".$page_id."' AND 
+				".$do." = '1' AND 
+				a.user_id = '".$this->obj->session->userdata('user_id')."'";
+				
+		$q = $this->obj->db->query($sql);
+		if ($q->num_rows() > 0)
+			return true;
+		else 
+			return false; 
+	}
+	
+	public function no_akses() { 
+		redirect(INDEX_PAGE.'auth/no_akses'); 
+	}
+
+
+}
+?>

@@ -1,0 +1,48 @@
+.form-container .box-form-full{
+	width:100%;
+	height:auto;
+	float:left;
+}
+
+.form-container .box-form-full .box-form-left{
+	width:48%;
+	height:auto;
+	float:left;
+}
+
+.form-container .box-form-full .box-form-right{
+	width:48%;
+	height:auto;
+	float:left;
+	margin-left:20px;
+}
+
+.form-container .box-form-full .textarea{
+	width:97%;
+	border:1px solid #CCC;
+	padding:10px;
+	float:left;
+	overflow: auto;
+	height:185px;
+	margin-bottom:15px;
+}
+
+.form-container .textdetail{
+	width:99%;
+	border:1px solid #CCC;
+	padding:5px;
+	background-color:#FFF;
+	float:left;
+	overflow: auto;
+	height:70px;
+
+}
+
+
+.form-container .box-form-full hr{
+	border: dotted #999 1px;
+	border-bottom:0px;
+	border-left:0px;
+	border-right:0px;
+	margin:10px 0 5px 0;
+}
